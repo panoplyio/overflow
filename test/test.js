@@ -1,6 +1,6 @@
 var stream = require( "stream" );
 var assert = require( "assert" );
-var overflow = require( "./overflow" );
+var overflow = require( ".." );
 
 describe( "Overflow", function () {
 
@@ -122,7 +122,7 @@ describe( "Overflow", function () {
             this.push( i++ )
         }
 
-        reader.pipe( overflow() ).resize( 1 ); 
+        reader.pipe( overflow() ).resize( 1 );
         // does not consume by current.read() or current.on( "data" )
         // in an attempt to overflow the internal buffers.
 
@@ -217,8 +217,8 @@ describe( "Overflow", function () {
         reader
             .pipe( overflow() )
             .reduce( function ( memo, d, done ) {
-                done( null, { 
-                    count: memo.count + 1, 
+                done( null, {
+                    count: memo.count + 1,
                     sum: memo.sum + d
                 });
             }, { count: 0, sum: 0 })
@@ -419,8 +419,3 @@ describe( "Overflow", function () {
 function assertLessThen( small, big ) {
     assert( small < big, small + " < " + big );
 }
-
-
-
-
-
