@@ -2,9 +2,9 @@
     "name": "overflow",
     "version": "1.1.5",
     "description": "Construct complex data-intensive flows by Node.js stream composition",
-    "author": "Roi Avinoam <avinoamr@gmail.com>",
-    "repository": "github:panoplyio/overflow",
     "license": "MIT",
+    "author": "Panoply",
+    "repository": "github:panoplyio/overflow",
     "files": [
         "/src"
     ],
